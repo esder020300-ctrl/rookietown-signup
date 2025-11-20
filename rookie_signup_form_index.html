@@ -1,0 +1,524 @@
+<style>
+.rookie-form {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.rookie-form h2 {
+  color: #FF6B35;
+  margin-bottom: 10px;
+  font-size: 28px;
+}
+
+.rookie-form p {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #FF6B35;
+}
+
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-item input {
+  width: auto;
+  margin-right: 8px;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 14px;
+  background: #FF6B35;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-btn:hover {
+  background: #E55A2B;
+}
+
+.submit-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.message {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.error {
+  background: #f8d7da;
+  color: #721c24;
+}
+</style>
+
+<div class="rookie-form">
+  <h2>🎓 루키타운 회원가입</h2>
+  <p>대학생을 위한 맞춤형 정보를 받아보세요!</p>
+  
+  <form id="rookieForm">
+    <div class="form-group">
+      <label>이름 *</label>
+      <input type="text" name="name" required placeholder="홍길동">
+    </div>
+
+    <div class="form-group">
+      <label>이메일 *</label>
+      <input type="email" name="email" required placeholder="example@email.com">
+    </div>
+
+    <div class="form-group">
+      <label>학교 *</label>
+      <select name="school" required>
+        <option value="">선택해주세요</option>
+        <option value="연세대학교">연세대학교</option>
+        <option value="고려대학교">고려대학교</option>
+        <option value="서울대학교">서울대학교</option>
+        <option value="성균관대학교">성균관대학교</option>
+        <option value="한양대학교">한양대학교</option>
+        <option value="중앙대학교">중앙대학교</option>
+        <option value="경희대학교">경희대학교</option>
+        <option value="이화여자대학교">이화여자대학교</option>
+        <option value="기타">기타</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>학년 *</label>
+      <select name="grade" required>
+        <option value="">선택해주세요</option>
+        <option value="1학년">1학년</option>
+        <option value="2학년">2학년</option>
+        <option value="3학년">3학년</option>
+        <option value="4학년">4학년</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>전공 계열 *</label>
+      <select name="major1" required>
+        <option value="">선택해주세요</option>
+        <option value="인문계열">인문계열</option>
+        <option value="사회계열">사회계열</option>
+        <option value="상경계열">상경계열</option>
+        <option value="법학•공공계열">법학•공공계열</option>
+        <option value="사범•교육계열">사범•교육계열</option>
+        <option value="자연과학계열">자연과학계열</option>
+        <option value="공학계열">공학계열</option>
+        <option value="IT•데이터•디지털융합">IT•데이터•디지털융합</option>
+        <option value="의약•보건계열">의약•보건계열</option>
+        <option value="예체능계열">예체능계열</option>
+        <option value="농림수산•식품•생명공학">농림수산•식품•생명공학</option>
+        <option value="건축•도시•부동산•교통">건축•도시•부동산•교통</option>
+        <option value="항공•서비스•관광•호스피탈리티">항공•서비스•관광•호스피탈리티</option>
+        <option value="공공•안전•군사">공공•안전•군사</option>
+        <option value="전문대•실무계열">전문대•실무계열</option>
+        <option value="융합•신생전공">융합•신생전공</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>전공 학과 *</label>
+      <select name="major2" required>
+        <option value="">선택해주세요</option>
+        <option value="국어국문학">국어국문학</option>
+        <option value="영어영문학">영어영문학</option>
+        <option value="독어독문학">독어독문학</option>
+        <option value="불어불문학">불어불문학</option>
+        <option value="중어중문학">중어중문학</option>
+        <option value="일어일문학">일어일문학</option>
+        <option value="철학">철학</option>
+        <option value="사학">사학</option>
+        <option value="문헌정보학">문헌정보학</option>
+        <option value="문화콘텐츠학">문화콘텐츠학</option>
+        <option value="응용언어학">응용언어학</option>
+        <option value="비교문학">비교문학</option>
+        <option value="인류학">인류학</option>
+        <option value="고고학">고고학</option>
+        <option value="디지털인문학">디지털인문학</option>
+        <option value="사회학">사회학</option>
+        <option value="심리학">심리학</option>
+        <option value="임상심리학">임상심리학</option>
+        <option value="상담심리학">상담심리학</option>
+        <option value="산업심리학">산업심리학</option>
+        <option value="조직심리학">조직심리학</option>
+        <option value="정치외교학">정치외교학</option>
+        <option value="행정학">행정학</option>
+        <option value="사회복지학">사회복지학</option>
+        <option value="언론정보학">언론정보학</option>
+        <option value="신문방송학">신문방송학</option>
+        <option value="국제학">국제학</option>
+        <option value="국제관계학">국제관계학</option>
+        <option value="도시사회학">도시사회학</option>
+        <option value="사회조사통계학">사회조사통계학</option>
+        <option value="경영학">경영학</option>
+        <option value="경제학">경제학</option>
+        <option value="회계학">회계학</option>
+        <option value="무역학">무역학</option>
+        <option value="금융학">금융학</option>
+        <option value="보험학">보험학</option>
+        <option value="세무학">세무학</option>
+        <option value="마케팅학">마케팅학</option>
+        <option value="광고홍보학">광고홍보학</option>
+        <option value="경영정보학">경영정보학</option>
+        <option value="국제통상학">국제통상학</option>
+        <option value="소비자학">소비자학</option>
+        <option value="창업학">창업학</option>
+        <option value="기술경영">기술경영</option>
+        <option value="법학">법학</option>
+        <option value="경찰행정학">경찰행정학</option>
+        <option value="법무학">법무학</option>
+        <option value="공공정책학">공공정책학</option>
+        <option value="국제법">국제법</option>
+        <option value="지적재산권학">지적재산권학</option>
+        <option value="소방안전학">소방안전학</option>
+        <option value="권세학">권세학</option>
+        <option value="조세법">조세법</option>
+        <option value="교육학">교육학</option>
+        <option value="국어교육">국어교육</option>
+        <option value="영어교육">영어교육</option>
+        <option value="수학교육">수학교육</option>
+        <option value="과학교육">과학교육</option>
+        <option value="체육교육">체육교육</option>
+        <option value="특수교육">특수교육</option>
+        <option value="유아교육">유아교육</option>
+        <option value="교육공학">교육공학</option>
+        <option value="상담교육">상담교육</option>
+        <option value="평생교육">평생교육</option>
+        <option value="수학">수학</option>
+        <option value="통계학">통계학</option>
+        <option value="무리학">무리학</option>
+        <option value="화학">화학</option>
+        <option value="생명과학">생명과학</option>
+        <option value="지구과학">지구과학</option>
+        <option value="해양학">해양학</option>
+        <option value="천문학">천문학</option>
+        <option value="분자생물학">분자생물학</option>
+        <option value="생화학">생화학</option>
+        <option value="응용수학">응용수학</option>
+        <option value="계산과학">계산과학</option>
+        <option value="환경과학">환경과학</option>
+        <option value="기계공학">기계공학</option>
+        <option value="전기공학">전기공학</option>
+        <option value="전자공학">전자공학</option>
+        <option value="컴퓨터공학">컴퓨터공학</option>
+        <option value="소프트웨어학">소프트웨어학</option>
+        <option value="컴퓨터과학">컴퓨터과학</option>
+        <option value="화학공학">화학공학</option>
+        <option value="건축공학">건축공학</option>
+        <option value="토목공학">토목공학</option>
+        <option value="환경공학">환경공학</option>
+        <option value="산업공학">산업공학</option>
+        <option value="신소재공학">신소재공학</option>
+        <option value="항공우주공학">항공우주공학</option>
+        <option value="자동차공학">자동차공학</option>
+        <option value="해양공학">해양공학</option>
+        <option value="로보틱스">로보틱스</option>
+        <option value="메카트로닉스">메카트로닉스</option>
+        <option value="반도체공학">반도체공학</option>
+        <option value="나노공학">나노공학</option>
+        <option value="광학공학">광학공학</option>
+        <option value="광전자공학">광전자공학</option>
+        <option value="플랜트공학">플랜트공학</option>
+        <option value="에너지공학">에너지공학</option>
+        <option value="산업안전공학">산업안전공학</option>
+        <option value="데이터사이언스">데이터사이언스</option>
+        <option value="빅데이터">빅데이터</option>
+        <option value="인공지능학">인공지능학</option>
+        <option value="정보보호학">정보보호학</option>
+        <option value="사이버보안">사이버보안</option>
+        <option value="게임공학">게임공학</option>
+        <option value="게임학과">게임학과</option>
+        <option value="디지털콘텐츠">디지털콘텐츠</option>
+        <option value="미디어테크">미디어테크</option>
+        <option value="UX디자인">UX디자인</option>
+        <option value="UI디자인">UI디자인</option>
+        <option value="인터렉션디자인">인터렉션디자인</option>
+        <option value="의학">의학</option>
+        <option value="치의학">치의학</option>
+        <option value="한의학">한의학</option>
+        <option value="약학">약학</option>
+        <option value="간호학">간호학</option>
+        <option value="수의학">수의학</option>
+        <option value="공중보건">공중보건</option>
+        <option value="보건행정">보건행정</option>
+        <option value="임상병리">임상병리</option>
+        <option value="방사선학">방사선학</option>
+        <option value="물리치료">물리치료</option>
+        <option value="작업치료">작업치료</option>
+        <option value="치위생학">치위생학</option>
+        <option value="안경광학">안경광학</option>
+        <option value="응급구조학">응급구조학</option>
+        <option value="음악">음악</option>
+        <option value="미술">미술</option>
+        <option value="디자인">디자인</option>
+        <option value="무용">무용</option>
+        <option value="연극영화">연극영화</option>
+        <option value="체육">체육</option>
+        <option value="스포츠과학">스포츠과학</option>
+        <option value="시각디자인">시각디자인</option>
+        <option value="산업디자인">산업디자인</option>
+        <option value="제품디자인">제품디자인</option>
+        <option value="실내건축">실내건축</option>
+        <option value="사진학">사진학</option>
+        <option value="영상학">영상학</option>
+        <option value="영화학">영화학</option>
+        <option value="공연예술">공연예술</option>
+        <option value="뮤지컬">뮤지컬</option>
+        <option value="무대미술">무대미술</option>
+        <option value="음향학">음향학</option>
+        <option value="음악테크놀로지">음악테크놀로지</option>
+        <option value="공예">공예</option>
+        <option value="뷰티학">뷰티학</option>
+        <option value="메이크업학">메이크업학</option>
+        <option value="국악">국악</option>
+        <option value="농학">농학</option>
+        <option value="원예학">원예학</option>
+        <option value="축산학">축산학</option>
+        <option value="임학">임학</option>
+        <option value="수산학">수산학</option>
+        <option value="식품영양학">식품영양학</option>
+        <option value="식품공학">식품공학</option>
+        <option value="농업공학">농업공학</option>
+        <option value="스마트팜학">스마트팜학</option>
+        <option value="바이오산업학">바이오산업학</option>
+        <option value="건축학">건축학</option>
+        <option value="도시계획학">도시계획학</option>
+        <option value="도시공학">도시공학</option>
+        <option value="조경학">조경학</option>
+        <option value="부동산학">부동산학</option>
+        <option value="부동산관리">부동산관리</option>
+        <option value="교통공학">교통공학</option>
+        <option value="철도공학">철도공학</option>
+        <option value="항만물류공학">항만물류공학</option>
+        <option value="항공운항학">항공운항학</option>
+        <option value="항공서비스학">항공서비스학</option>
+        <option value="항공정비학">항공정비학</option>
+        <option value="호텔관광학">호텔관광학</option>
+        <option value="레저학">레저학</option>
+        <option value="이벤트학">이벤트학</option>
+        <option value="외식학">외식학</option>
+        <option value="조리학">조리학</option>
+        <option value="서비스경영">서비스경영</option>
+        <option value="경찰학">경찰학</option>
+        <option value="치안행정학">치안행정학</option>
+        <option value="소방방재학">소방방재학</option>
+        <option value="군사학">군사학</option>
+        <option value="국방학">국방학</option>
+        <option value="교정행정학">교정행정학</option>
+        <option value="안전환경학">안전환경학</option>
+        <option value="전기실습">전기실습</option>
+        <option value="전자실습">전자실습</option>
+        <option value="기계가공">기계가공</option>
+        <option value="용접">용접</option>
+        <option value="자동차정비">자동차정비</option>
+        <option value="항공정비">항공정비</option>
+        <option value="방송영상제작">방송영상제작</option>
+        <option value="미용학">미용학</option>
+        <option value="피부학">피부학</option>
+        <option value="네일학">네일학</option>
+        <option value="요리학">요리학</option>
+        <option value="실용음악">실용음악</option>
+        <option value="바이오헬스융합">바이오헬스융합</option>
+        <option value="뇌과학">뇌과학</option>
+        <option value="뇌공학">뇌공학</option>
+        <option value="핀테크">핀테크</option>
+        <option value="블록체인">블록체인</option>
+        <option value="에너지신산업">에너지신산업</option>
+        <option value="지속가능발전">지속가능발전</option>
+        <option value="ESG학">ESG학</option>
+        <option value="창업융합전공">창업융합전공</option>
+        <option value="자율전공학부">자율전공학부</option>
+        <option value="학제간융합전공">학제간융합전공</option>
+        <option value="기타">기타</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>지역 *</label>
+      <select name="region" required>
+        <option value="">선택해주세요</option>
+        <option value="서울특별시">서울특별시</option>
+        <option value="경기도">경기도</option>
+        <option value="인천광역시">인천광역시</option>
+        <option value="부산광역시">부산광역시</option>
+        <option value="대구광역시">대구광역시</option>
+        <option value="광주광역시">광주광역시</option>
+        <option value="대전광역시">대전광역시</option>
+        <option value="울산광역시">울산광역시</option>
+        <option value="세종특별자치시">세종특별자치시</option>
+        <option value="강원특별자치도">강원특별자치도</option>
+        <option value="충청북도">충청북도</option>
+        <option value="충청남도">충청남도</option>
+        <option value="전북특별자치도">전북특별자치도</option>
+        <option value="전라남도">전라남도</option>
+        <option value="경상북도">경상북도</option>
+        <option value="경상남도">경상남도</option>
+        <option value="제주특별자치도">제주특별자치도</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>시/군/구</label>
+      <input type="text" name="district" placeholder="강남구">
+    </div>
+
+    <div class="form-group">
+      <label>소득분위</label>
+      <select name="income">
+        <option value="">선택해주세요</option>
+        <option value="1분위">1분위</option>
+        <option value="2분위">2분위</option>
+        <option value="3분위">3분위</option>
+        <option value="4분위">4분위</option>
+        <option value="5분위">5분위</option>
+        <option value="6분위">6분위</option>
+        <option value="7분위">7분위</option>
+        <option value="8분위">8분위</option>
+        <option value="9분위">9분위</option>
+        <option value="10분위">10분위</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>관심분야 (복수선택 가능)</label>
+      <div class="checkbox-group">
+        <div class="checkbox-item">
+          <input type="checkbox" name="interests" value="장학금" id="int1">
+          <label for="int1">장학금</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" name="interests" value="대외활동" id="int2">
+          <label for="int2">대외활동</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" name="interests" value="공모전" id="int3">
+          <label for="int3">공모전</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" name="interests" value="청년혜택" id="int4">
+          <label for="int4">청년혜택</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" name="interests" value="해외봉사" id="int5">
+          <label for="int5">해외봉사</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" name="interests" value="국내봉사" id="int6">
+          <label for="int6">국내봉사</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" name="interests" value="교환학생" id="int7">
+          <label for="int7">교환학생</label>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">가입하기</button>
+  </form>
+
+  <div id="message"></div>
+</div>
+
+<script>
+document.getElementById('rookieForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  const btn = this.querySelector('.submit-btn');
+  const messageDiv = document.getElementById('message');
+  
+  btn.disabled = true;
+  btn.textContent = '전송 중...';
+  messageDiv.innerHTML = '';
+  
+  const formData = new FormData(this);
+  const data = {
+    name: formData.get('name'),
+    email: formData.get('email'),
+    school: formData.get('school'),
+    grade: formData.get('grade'),
+    major1: formData.get('major1'),
+    major2: formData.get('major2'),
+    region: formData.get('region'),
+    district: formData.get('district') || '',
+    income: formData.get('income') || '',
+    interests: formData.getAll('interests').join(', ')
+  };
+  
+  try {
+    const response = await fetch('https://rookietown.app.n8n.cloud/webhook/user-signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    });
+    
+    if (response.ok) {
+      messageDiv.innerHTML = '<div class="message success">✅ 가입이 완료되었습니다! 환영합니다 🎉</div>';
+      this.reset();
+    } else {
+      throw new Error('전송 실패');
+    }
+  } catch (error) {
+    messageDiv.innerHTML = '<div class="message error">❌ 오류가 발생했습니다. 다시 시도해주세요.</div>';
+  }
+  
+  btn.disabled = false;
+  btn.textContent = '가입하기';
+});
+</script>
